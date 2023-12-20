@@ -1,5 +1,6 @@
 package com.martijn.diningreviewapicodecademy.Review;
 
+import com.martijn.diningreviewapicodecademy.Admin.ReviewStatus;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 import lombok.AllArgsConstructor;
@@ -16,4 +17,5 @@ public class Review {
     private int eggScore;
     private int dairyScore;
     private String comment;
+    private ReviewStatus reviewStatus;
 }

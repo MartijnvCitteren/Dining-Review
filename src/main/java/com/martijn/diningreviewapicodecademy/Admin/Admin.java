@@ -1,4 +1,4 @@
-package com.martijn.diningreviewapicodecademy.admin;
+package com.martijn.diningreviewapicodecademy.Admin;
 
 import lombok.AllArgsConstructor;
 import lombok.NoArgsConstructor;
@@ -6,5 +6,6 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 public class Admin {
-    private Boolean reviewAccepted;
+    private ReviewStatus reviewStatus;
+
 }
