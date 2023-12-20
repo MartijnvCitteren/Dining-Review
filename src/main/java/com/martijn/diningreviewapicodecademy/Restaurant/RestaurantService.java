@@ -15,7 +15,12 @@ public class RestaurantService {
     }
 
     public Restaurant addRestaurant(Restaurant restaurant) {
-        return restaurantRepository.save(restaurant);
+        if (restaurantRepository.existsByRestaurantName(restaurant.getRestaurantName())){
+            throw new RuntimeException("Restaurant aleady excists");
+        }
+        else {
+            return restaurantRepository.save(restaurant);
+        }
     }
 
     public Restaurant getRestaurantByID(long id) {
