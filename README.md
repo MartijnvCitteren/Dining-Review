@@ -7,3 +7,10 @@ This project is the final assignment of CodeCademy's study path: "[Create Rest A
  - Java
  - Spring
  - H2 database
+
+### Requirements for this project
+ - [ ] Create new users, reviews, and restaurants
+ - [ ] Update user and restaurant information
+ - [ ] Make sure only registered users can post a reviews
+ - [ ] An admin needs to be able to change the status of review (approved / declined / pending)
+ - [ ] Calculate average review scores per restaurant
