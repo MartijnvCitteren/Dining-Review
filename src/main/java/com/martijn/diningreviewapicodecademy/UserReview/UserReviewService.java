@@ -1,9 +1,8 @@
 package com.martijn.diningreviewapicodecademy.UserReview;
 
 import org.springframework.stereotype.Service;
-import org.springframework.web.bind.annotation.RequestBody;
 
-import javax.management.RuntimeErrorException;
+import java.util.Optional;
 
 @Service
 public class UserReviewService {
@@ -33,7 +32,29 @@ public class UserReviewService {
     }
 
 
+    public UserReview updateUser(UserReview userReview) {
+        Optional<UserReview> optionalUserReview = userReviewRepository.findById(userReview.getId());
+        UserReview oldUser = null;
+        if (optionalUserReview.isPresent()) {
+            oldUser = optionalUserReview.get();
+            oldUser.setCity(userReview.getCity());
+            oldUser.setState(userReview.getState());
+            oldUser.setZipcode(userReview.getZipcode());
+            oldUser.setDairyAllergies(userReview.getDairyAllergies());
+            oldUser.setEggAllergies(userReview.getEggAllergies());
+            oldUser.setPeanutAllergies(userReview.getPeanutAllergies());
+            userReviewRepository.save(oldUser);
+        }
+        else {
+            return new UserReview();
+        }
+        return  oldUser;
+    }
 
-
-
+    public UserReview deleteUser(Long id) {
+        if (userReviewRepository.existsById(id)) {
+            userReviewRepository.deleteById(id);
+        }
+        return null;
+    }
 }

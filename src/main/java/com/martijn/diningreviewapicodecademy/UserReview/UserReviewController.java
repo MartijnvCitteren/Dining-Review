@@ -1,5 +1,6 @@
 package com.martijn.diningreviewapicodecademy.UserReview;
 
+import org.apache.catalina.User;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
@@ -19,8 +20,18 @@ public class UserReviewController {
     }
 
     @GetMapping("/{name}")
-    public UserReview findUserByName(@RequestParam String name) {
+    public UserReview findUserByName(@PathVariable String name) {
         return userReviewService.findUserByName(name);
+    }
+
+    @PutMapping("/update")
+    public UserReview updateUser(@RequestBody UserReview userReview) {
+        return userReviewService.updateUser(userReview);
+    }
+
+    @DeleteMapping("/delete/{id}")
+    public UserReview deleteUser(@PathVariable Long id){
+        return userReviewService.deleteUser(id);
     }
 
 }
