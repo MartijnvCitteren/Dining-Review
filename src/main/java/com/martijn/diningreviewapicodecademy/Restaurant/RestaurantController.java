@@ -25,9 +25,9 @@ public class RestaurantController {
         return restaurantService.getRestaurantByID(id);
     }
 
-    @GetMapping("/all")
-    public List<Restaurant> allRestaurants() {
-        return restaurantService.getAllRestaurants();
+    @GetMapping("/all/{city}")
+    public List<Restaurant> getRestaurantsByCityAndReview(@PathVariable String city) {
+        return restaurantService.getRestaurantsByCityAndReview(city);
     }
 
     @PutMapping("/update")

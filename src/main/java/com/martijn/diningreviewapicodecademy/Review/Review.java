@@ -1,6 +1,5 @@
 package com.martijn.diningreviewapicodecademy.Review;
 
-import com.martijn.diningreviewapicodecademy.Admin.ReviewStatus;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.Id;
@@ -20,7 +19,7 @@ public class Review {
     private int eggScore;
     private int dairyScore;
     private String comment;
-    private ReviewStatus reviewStatus;
+    private ReviewStatus reviewStatus = ReviewStatus.NEW;
 
     public long getId() {
         return id;

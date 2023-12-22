@@ -15,7 +15,7 @@ public class ReviewController {
         this.reviewService = reviewService;
     }
     @PostMapping("/newReview")
-    public Review addReview(@RequestBody Review review) {
+    public Review addReview(@RequestBody Review review, String userReviewName) {
         return reviewService.addReview(review);
     }
 }

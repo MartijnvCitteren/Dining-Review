@@ -15,7 +15,12 @@ public class Restaurant {
     @GeneratedValue
     private long id;
     private String restaurantName;
-    private String City;
+    private String city;
+    private Double averageReviewScore;
+    private Double peanutScore;
+    private Double dairyScore;
+    private Double eggScore;
+    private int totalReviews;
 
     public long getId() {
         return id;
@@ -34,10 +39,50 @@ public class Restaurant {
     }
 
     public String getCity() {
-        return City;
+        return city;
     }
 
     public void setCity(String city) {
-        City = city;
+        this.city = city;
+    }
+
+    public Double getAverageReviewScore() {
+        return averageReviewScore;
+    }
+
+    public void setAverageReviewScore(Double averageReviewScore) {
+        this.averageReviewScore = averageReviewScore;
+    }
+
+    public Double getPeanutScore() {
+        return peanutScore;
+    }
+
+    public void setPeanutScore(Double peanutScore) {
+        this.peanutScore = peanutScore;
+    }
+
+    public Double getDairyScore() {
+        return dairyScore;
+    }
+
+    public void setDairyScore(Double dairyScore) {
+        this.dairyScore = dairyScore;
+    }
+
+    public Double getEggScore() {
+        return eggScore;
+    }
+
+    public void setEggScore(Double eggScore) {
+        this.eggScore = eggScore;
+    }
+
+    public int getTotalReviews() {
+        return totalReviews;
+    }
+
+    public void setTotalReviews(int totalReviews) {
+        this.totalReviews = totalReviews;
     }
 }

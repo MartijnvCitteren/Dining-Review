@@ -15,7 +15,7 @@ public class UserReviewService {
 
     public UserReview addUser(UserReview userReview) {
         if (userReviewRepository.existsByName(userReview.getName())) {
-            throw new RuntimeException("Name already excists");
+            throw new RuntimeException("Name already exists");
         }
         else {
             return userReviewRepository.save(userReview);

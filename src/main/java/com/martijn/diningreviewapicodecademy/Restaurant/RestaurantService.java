@@ -16,7 +16,7 @@ public class RestaurantService {
 
     public Restaurant addRestaurant(Restaurant restaurant) {
         if (restaurantRepository.existsByRestaurantName(restaurant.getRestaurantName())){
-            throw new RuntimeException("Restaurant aleady excists");
+            throw new RuntimeException("Restaurant already exists");
         }
         else {
             return restaurantRepository.save(restaurant);
@@ -27,8 +27,8 @@ public class RestaurantService {
         return restaurantRepository.findById(id).orElse(null);
     }
 
-    public List<Restaurant> getAllRestaurants() {
-        return restaurantRepository.findAll();
+    public List<Restaurant> getRestaurantsByCityAndReview(String city) {
+        return restaurantRepository.findAllByCityIgnoreCaseAndAverageReviewScoreIsNotNullOrderByAverageReviewScoreDesc(city);
     }
 
     public Restaurant updateRestaurant(Restaurant restaurant) {
